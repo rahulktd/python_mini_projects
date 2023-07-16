@@ -1,0 +1,46 @@
+{% extends "Admin/Admin_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <form method="get" class="form-inline">
+      <div class="md-form my-0">
+        {{ stu.form|crispy }}
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </form>
+
+    <table class="table table-hover table-bordered border-primary">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Class</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Address</th>
+          <th scope="col">Activate</th>
+        </tr>
+      </thead>
+        {% for student in data %}
+        <tr>
+          <td>{{ student.name }}</td>
+          <td>{{ student.standard }}</td>
+          <td>{{ student.mobile }}</td>
+          <td>{{ student.address }}</td>
+          <td>
+            {% if not student.user.is_active %}
+            <form method="POST" action="{% url 'activate_student' student.id %}">
+              {% csrf_token %}
+              <button class="btn btn-primary" type="submit">Activate</button>
+            </form>
+            {% else %}
+            <span class="badge badge-success">Active</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

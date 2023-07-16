@@ -1,0 +1,13 @@
+{% extends "Admin/Admin_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <form method="POST" action="{% url 'activate_student' student.id %}">
+      {% csrf_token %}
+      <button class="btn btn-primary" type="submit">Activate</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

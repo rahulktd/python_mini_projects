@@ -1,0 +1,13 @@
+{% extends "Student/USER_DASH.html" %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+  <h1>Create Complaint</h1>
+  <form method="POST" action="{% url 'create_complaint' %}">
+    {% csrf_token %}
+    {{ form|crispy}}
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

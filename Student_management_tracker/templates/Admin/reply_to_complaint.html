@@ -1,0 +1,30 @@
+{% extends "Admin/Admin_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h1>Reply to Complaint {{ complaint.id }}</h1>
+
+    <h2>Complaint Content:</h2>
+    <p>{{ complaint.message }}</p>
+
+    <h2>Replies:</h2>
+    {% if replies %}
+      <ul>
+        {% for reply in replies %}
+          <li>{{ reply.content }} ({{ reply.created_at }})</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No replies yet.</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'reply_to_complaint' complaint.id %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

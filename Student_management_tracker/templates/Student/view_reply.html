@@ -1,0 +1,14 @@
+{% extends "Student/USER_DASH.html" %}
+
+{% block content %}
+  <h1>View Reply</h1>
+{% for i in reply %}
+
+  <p><strong>Reply :</strong> {{ i.content }}</p>
+  <p><strong>Created At:</strong> {{ i.created_at }}</p>
+<hr>
+
+{% endfor %}
+
+  <a href="{% url 'student_dashboard' %}">Back to Dashboard</a>
+{% endblock %}
