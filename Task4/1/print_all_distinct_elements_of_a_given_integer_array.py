@@ -1,6 +1,6 @@
 # Print All Distinct Elements of a given integer array
 
-arr = [1,2,2,3,3,4,4,5,6,7]
+arr = [1, 2, 2, 3, 3, 4, 4, 5, 6, 7]
 unique = []
 for i in arr:
     if i not in unique:

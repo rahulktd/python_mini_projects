@@ -20,12 +20,14 @@ n = len(arr)
 
 for i in range(n):
     current_sum = arr[i]
-
+    a = []
     if current_sum == target_sum:
         print(i)
     else:
         for j in range(i + 1, n):
             current_sum += arr[j]
             if current_sum == target_sum:
-                print(i, j)
+                a.append(i)
+                a.append(j)
+                print(a)
                 break

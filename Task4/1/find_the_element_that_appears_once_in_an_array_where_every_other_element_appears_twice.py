@@ -6,6 +6,6 @@ for i in range(n):
     count = 0
     for j in range(n):
         if arr[i] == arr[j]:
-            count +=1
+            count += 1
     if count == 1:
         print("Element that appears once is", arr[i])

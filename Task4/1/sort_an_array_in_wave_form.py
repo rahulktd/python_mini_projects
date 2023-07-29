@@ -2,10 +2,10 @@
 
 def sortInWave(arr, n):
     for i in range(0, n - 1, 2):
-        if (i > 0 and arr[i] < arr[i - 1]):
+        if i > 0 and arr[i] < arr[i - 1]:
             arr[i], arr[i - 1] = arr[i - 1], arr[i]
 
-        if (i < n - 1 and arr[i] < arr[i + 1]):
+        if i < n - 1 and arr[i] < arr[i + 1]:
             arr[i], arr[i + 1] = arr[i + 1], arr[i]
 
 
@@ -25,7 +25,7 @@ def waveForm_sort(arr):
                 if arr[j] < arr[j + 1]:
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
+
 arr = [3, 1, 4, 2, 5]
 waveForm_sort(arr)
 print(arr)
-

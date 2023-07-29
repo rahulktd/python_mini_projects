@@ -7,7 +7,8 @@
 # Output: 20
 # Explanation: The element 20 has neighbors 10 and 15, both of them are less than 20.
 
-arr = [10, 20, 15, 2, 23, 90, 67]
+# arr = [10, 20, 15, 2, 23, 90, 67]
+arr = [5, 10, 20, 15]
 n = len(arr)
 start = 0
 end = n-1

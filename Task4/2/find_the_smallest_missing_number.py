@@ -20,6 +20,6 @@ vec = [0]*m
 for i in range(n):
     vec[arr[i]] = 1
 for i in range(m):
-    if vec[i]==0:
+    if vec[i] == 0:
         print('Missing number is',i)
 
